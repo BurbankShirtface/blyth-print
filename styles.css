@@ -1,8 +1,10 @@
 :root {
-  --primary-color: #8b001d; /* Updated to deep red */
-  --secondary-color: #333333;
-  --light-bg: #f4f4f4;
+  --primary-color: #8b001d; /* Deep red from logo */
+  --secondary-color: #4a4a4a; /* Lighter gray for better contrast */
+  --light-bg: #1e1e1e; /* Slightly lighter than black for service boxes */
   --white: #ffffff;
+  --black: #000000;
+  --text-gray: #e0e0e0; /* Light gray for better readability */
 }
 
 /* Reset default styles */
@@ -15,7 +17,8 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: var(--white);
+  background-color: var(--black);
+  color: var(--white);
 }
 
 main {
@@ -28,7 +31,7 @@ main {
 #hero {
   text-align: center;
   padding: 4rem 2rem;
-  background-color: var(--white);
+  background-color: var(--black);
 }
 
 .logo-container {
@@ -46,7 +49,7 @@ main {
   background-color: var(--light-bg);
   padding: 3rem 2rem;
   text-align: center;
-  color: var(--secondary-color);
+  color: var(--text-gray);
 }
 
 #contact h2 {
@@ -72,16 +75,17 @@ main {
 
 .info-column p {
   margin: 0.5rem 0;
+  color: var(--text-gray);
 }
 
 .phone {
   font-size: 1.2rem;
   font-weight: bold;
-  color: var(--primary-color);
+  color: var(--white);
 }
 
 .phone a {
-  color: var(--primary-color);
+  color: var(--white);
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: bold;
@@ -89,7 +93,7 @@ main {
 }
 
 .phone a:hover {
-  color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 .contact-form {
@@ -185,12 +189,13 @@ footer {
 /* Services Section */
 #services {
   padding: 4rem 2rem;
-  background-color: var(--white);
+  background-color: var(--black);
 }
 
 #services h2 {
   text-align: center;
   margin-bottom: 1.5rem;
+  color: var(--primary-color);
 }
 
 .services-intro {
@@ -209,13 +214,16 @@ footer {
 
 .service-item {
   padding: 1.5rem;
-  background-color: var(--light-bg);
+  background-color: rgba(255, 255, 255, 0.08); /* Increased from 0.05 */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Increased from 0.1 */
   border-radius: 8px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  color: var(--text-gray);
 }
 
 .service-item:hover {
   transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.12); /* Increased from 0.08 */
 }
 
 .service-item h3 {
@@ -228,7 +236,7 @@ footer {
   margin-top: 3rem;
   font-size: 1.2rem;
   font-weight: bold;
-  color: var(--primary-color);
+  color: var(--white);
 }
 
 /* Enhanced responsive design for services */
@@ -257,7 +265,7 @@ footer {
 .hours {
   margin: 2rem 0;
   padding: 1rem;
-  background-color: var(--white);
+  background-color: var(--light-bg);
   border-radius: 8px;
 }
 
@@ -290,5 +298,58 @@ footer {
     right: 1rem;
     padding: 0.6rem 1.2rem;
     font-size: 0.9rem;
+  }
+}
+
+/* Neon Text Effect */
+.neon-tagline {
+  font-family: "Yellowtail", cursive;
+  font-size: 2.5rem;
+  font-weight: normal;
+  color: #fff;
+  padding: 2rem 0;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff,
+    0 0 42px var(--primary-color), 0 0 82px var(--primary-color),
+    0 0 92px var(--primary-color), 0 0 102px var(--primary-color),
+    0 0 151px var(--primary-color);
+  animation: flicker 1.5s infinite alternate;
+  letter-spacing: 0.1em;
+  margin-top: 1.5rem;
+  line-height: 1.2;
+}
+
+/* Flickering animation */
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff,
+      0 0 42px var(--primary-color), 0 0 82px var(--primary-color),
+      0 0 92px var(--primary-color), 0 0 102px var(--primary-color),
+      0 0 151px var(--primary-color);
+  }
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+
+/* Responsive adjustments for neon text */
+@media (max-width: 768px) {
+  .neon-tagline {
+    font-size: 2rem;
+    padding: 1.5rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .neon-tagline {
+    font-size: 1.8rem;
+    padding: 1rem 0;
   }
 }
