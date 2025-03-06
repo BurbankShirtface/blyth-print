@@ -81,11 +81,11 @@ main {
 .phone {
   font-size: 1.2rem;
   font-weight: bold;
-  color: var(--white);
+  color: var(--primary-color);
 }
 
 .phone a {
-  color: var(--white);
+  color: var(--primary-color);
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: bold;
@@ -93,7 +93,7 @@ main {
 }
 
 .phone a:hover {
-  color: var(--primary-color);
+  color: var(--white);
 }
 
 .contact-form {
@@ -143,10 +143,42 @@ footer {
   margin-top: auto;
 }
 
-/* Enhanced responsive design */
+/* Base responsive adjustments */
+@media (max-width: 1200px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .logo-container img {
+    max-width: 500px;
+  }
+
+  .neon-tagline {
+    font-size: 2.2rem;
+  }
+}
+
 @media (max-width: 768px) {
   .logo-container img {
     max-width: 90%;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .service-item {
+    padding: 1.25rem;
   }
 
   .contact-form {
@@ -156,13 +188,13 @@ footer {
 
   .form-group input,
   .form-group textarea {
-    font-size: 16px; /* Prevents zoom on mobile devices */
+    font-size: 16px;
   }
 
   .phone a {
     font-size: 1.1rem;
     padding: 0.5rem 0;
-    display: inline-block; /* Makes tap target larger */
+    display: inline-block;
   }
 
   .info-row {
@@ -174,15 +206,157 @@ footer {
   .info-column {
     text-align: center;
   }
+
+  .neon-tagline {
+    font-size: 1.6rem;
+    padding: 1rem 0;
+    letter-spacing: 0.05em;
+    white-space: normal;
+    word-spacing: 0.2em;
+  }
+
+  #services h2 {
+    font-size: 1.8rem;
+  }
+
+  .services-intro {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .service-item h3 {
+    font-size: 1.2rem;
+  }
+
+  .service-item p {
+    font-size: 0.95rem;
+  }
+
+  .success-message {
+    margin: 1.5rem auto;
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
   #contact {
     padding: 2rem 1rem;
   }
 
   .submit-button {
-    width: 100%; /* Full width button on very small screens */
+    width: 100%;
+  }
+
+  .neon-tagline {
+    gap: 0.5rem;
+    padding: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .neon-word::before,
+  .neon-word::after {
+    content: "..";
+    margin: 0 0.25rem;
+  }
+
+  #services {
+    padding: 2rem 1rem;
+  }
+
+  #services h2 {
+    font-size: 1.6rem;
+  }
+
+  .info-column h3 {
+    font-size: 1rem;
+  }
+
+  .info-column p {
+    font-size: 0.9rem;
+  }
+
+  .phone a {
+    font-size: 1rem;
+  }
+
+  .success-message {
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .neon-tagline {
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+    letter-spacing: 0.02em;
+    word-spacing: 0.1em;
+  }
+}
+
+/* Tablet-specific improvements */
+@media (min-width: 768px) and (max-width: 992px) {
+  .service-item {
+    min-height: 160px;
+  }
+
+  .info-row {
+    gap: 4rem;
+  }
+}
+
+/* Landscape phone improvements */
+@media (max-height: 576px) and (orientation: landscape) {
+  #hero {
+    padding: 2rem 1rem;
+  }
+
+  .neon-tagline {
+    padding: 1rem 0;
+    margin-top: 1rem;
+  }
+
+  .logo-container img {
+    max-width: 400px;
+  }
+}
+
+/* Form improvements for touch devices */
+@media (hover: none) {
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px;
+    padding: 1rem;
+  }
+
+  .submit-button {
+    padding: 1.2rem 2rem;
+  }
+
+  .neon-word {
+    text-shadow: 0 0 5px #fff, 0 0 15px var(--primary-color);
+    animation: none;
+  }
+}
+
+/* High-resolution screens */
+@media (min-width: 1400px) {
+  .services-grid {
+    max-width: 1400px;
+  }
+
+  .logo-container {
+    max-width: 1000px;
+  }
+
+  .neon-tagline {
+    font-size: 2.8rem;
   }
 }
 
@@ -236,86 +410,45 @@ footer {
   margin-top: 3rem;
   font-size: 1.2rem;
   font-weight: bold;
-  color: var(--white);
-}
-
-/* Enhanced responsive design for services */
-@media (max-width: 768px) {
-  .services-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    padding: 0 1rem;
-  }
-
-  #services {
-    padding: 3rem 1rem;
-  }
-
-  .service-item {
-    padding: 1.25rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.hours {
-  margin: 2rem 0;
-  padding: 1rem;
-  background-color: var(--light-bg);
-  border-radius: 8px;
-}
-
-.contact-button {
-  position: fixed;
-  top: 2rem;
-  right: 2rem;
-  background-color: var(--primary-color);
-  color: var(--white);
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
-  z-index: 1000;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.contact-button:hover {
-  background-color: var(--secondary-color);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Responsive adjustments for the button */
-@media (max-width: 768px) {
-  .contact-button {
-    top: 1rem;
-    right: 1rem;
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
-  }
+  color: var(--primary-color);
 }
 
 /* Neon Text Effect */
 .neon-tagline {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1vw;
+  margin-top: 1.5rem;
+  padding: 1rem;
+}
+
+.neon-word {
   font-family: "Yellowtail", cursive;
-  font-size: 2.5rem;
+  font-size: clamp(1rem, 4vw, 2.5rem);
   font-weight: normal;
   color: #fff;
-  padding: 2rem 0;
   text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff,
-    0 0 42px var(--primary-color), 0 0 82px var(--primary-color),
-    0 0 92px var(--primary-color), 0 0 102px var(--primary-color),
-    0 0 151px var(--primary-color);
+    0 0 42px var(--primary-color);
   animation: flicker 1.5s infinite alternate;
-  letter-spacing: 0.1em;
-  margin-top: 1.5rem;
-  line-height: 1.2;
+}
+
+.neon-word::before {
+  content: "...";
+  margin-right: 0.5vw;
+}
+
+.neon-word::after {
+  content: "...";
+  margin-left: 0.5vw;
+}
+
+.neon-word:first-child::before {
+  visibility: hidden;
+}
+
+.neon-word:last-child::after {
+  visibility: hidden;
 }
 
 /* Flickering animation */
@@ -328,9 +461,7 @@ footer {
   57%,
   100% {
     text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff,
-      0 0 42px var(--primary-color), 0 0 82px var(--primary-color),
-      0 0 92px var(--primary-color), 0 0 102px var(--primary-color),
-      0 0 151px var(--primary-color);
+      0 0 42px var(--primary-color);
   }
   20%,
   24%,
@@ -339,17 +470,56 @@ footer {
   }
 }
 
-/* Responsive adjustments for neon text */
-@media (max-width: 768px) {
-  .neon-tagline {
-    font-size: 2rem;
-    padding: 1.5rem 0;
-  }
+.hours {
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: var(--light-bg);
+  border-radius: 8px;
 }
 
-@media (max-width: 480px) {
-  .neon-tagline {
-    font-size: 1.8rem;
-    padding: 1rem 0;
+.contact-button {
+  position: fixed;
+  top: clamp(0.5rem, 2vw, 2.5rem);
+  right: clamp(0.5rem, 2vw, 2.5rem);
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: clamp(0.5rem, 1.2vw, 1rem) clamp(1rem, 2vw, 2rem);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: clamp(0.875rem, 1.2vw, 1.2rem);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.contact-button:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.success-message {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: var(--white);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
