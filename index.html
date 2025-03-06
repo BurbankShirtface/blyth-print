@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <title>Blyth Print Shop</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <button class="contact-button" onclick="scrollToContact()">
+      Contact Us
+    </button>
+    <main>
+      <section id="hero">
+        <div class="logo-container">
+          <img
+            src="Blyth printing logos/blythPrintLogo.png"
+            alt="Blyth Print Shop Logo"
+          />
+        </div>
+      </section>
+
+      <section id="services">
+        <h2>Our Printing Services</h2>
+        <p class="services-intro">
+          We offer high-quality printing solutions for businesses and
+          individuals, including:
+        </p>
+
+        <div class="services-grid">
+          <div class="service-item">
+            <h3>Business Printing</h3>
+            <p>Business cards, letterheads, envelopes</p>
+          </div>
+          <div class="service-item">
+            <h3>Marketing Materials</h3>
+            <p>Brochures, flyers, posters, postcards</p>
+          </div>
+          <div class="service-item">
+            <h3>Large Format & Signage</h3>
+            <p>Banners, yard signs, decals, blueprints</p>
+          </div>
+          <div class="service-item">
+            <h3>Custom Labels & Stickers</h3>
+            <p>Roll labels, die-cut stickers</p>
+          </div>
+          <div class="service-item">
+            <h3>Booklets & Binding</h3>
+            <p>Magazines, catalogs, manuals, spiral binding</p>
+          </div>
+          <div class="service-item">
+            <h3>Personal & Event Printing</h3>
+            <p>Invitations, greeting cards, custom stationery</p>
+          </div>
+          <div class="service-item">
+            <h3>Promotional Products</h3>
+            <p>Apparel, mugs, pens, packaging</p>
+          </div>
+          <div class="service-item">
+            <h3>Copying & Scanning</h3>
+            <p>Black & white, color, document scanning</p>
+          </div>
+          <div class="service-item">
+            <h3>Graphic Design & Finishing</h3>
+            <p>Logo design, laminating, embossing</p>
+          </div>
+        </div>
+
+        <p class="services-cta">Need something custom? Contact us today!</p>
+      </section>
+
+      <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+          <div class="info-row">
+            <div class="info-column">
+              <h3>Location</h3>
+              <p>411 Queen Street</p>
+              <p>Blyth, ON</p>
+              <p>N0M 1L0</p>
+            </div>
+            <div class="info-column">
+              <h3>Hours</h3>
+              <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+              <p>Saturday: 10:00 AM - 2:00 PM</p>
+              <p>Sunday: Closed</p>
+            </div>
+          </div>
+          <p class="phone">
+            <a href="tel:519-523-9211">519-523-9211</a>
+          </p>
+        </div>
+
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/YOUR_FORM_ID"
+          method="POST"
+        >
+          <div class="form-group">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your Name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Your Message"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="submit-button">Send Message</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Blyth Print Shop. All rights reserved.</p>
+    </footer>
+
+    <script>
+      function scrollToContact() {
+        document
+          .getElementById("contact")
+          .scrollIntoView({ behavior: "smooth" });
+      }
+    </script>
+  </body>
+</html>

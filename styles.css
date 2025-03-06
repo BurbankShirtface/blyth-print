@@ -1,0 +1,294 @@
+:root {
+  --primary-color: #8b001d; /* Updated to deep red */
+  --secondary-color: #333333;
+  --light-bg: #f4f4f4;
+  --white: #ffffff;
+}
+
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: var(--white);
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: var(--white);
+}
+
+.logo-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.logo-container img {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+}
+
+#contact {
+  background-color: var(--light-bg);
+  padding: 3rem 2rem;
+  text-align: center;
+  color: var(--secondary-color);
+}
+
+#contact h2 {
+  margin-bottom: 2rem;
+}
+
+.contact-info {
+  margin-bottom: 2rem;
+}
+
+.info-row {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+  margin-bottom: 2rem;
+}
+
+.info-column h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.info-column p {
+  margin: 0.5rem 0;
+}
+
+.phone {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.phone a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.phone a:hover {
+  color: var(--secondary-color);
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.submit-button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: var(--secondary-color);
+}
+
+footer {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+/* Enhanced responsive design */
+@media (max-width: 768px) {
+  .logo-container img {
+    max-width: 90%;
+  }
+
+  .contact-form {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px; /* Prevents zoom on mobile devices */
+  }
+
+  .phone a {
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    display: inline-block; /* Makes tap target larger */
+  }
+
+  .info-row {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .info-column {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  #contact {
+    padding: 2rem 1rem;
+  }
+
+  .submit-button {
+    width: 100%; /* Full width button on very small screens */
+  }
+}
+
+/* Services Section */
+#services {
+  padding: 4rem 2rem;
+  background-color: var(--white);
+}
+
+#services h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.services-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-item {
+  padding: 1.5rem;
+  background-color: var(--light-bg);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+}
+
+.service-item h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.services-cta {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+/* Enhanced responsive design for services */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  #services {
+    padding: 3rem 1rem;
+  }
+
+  .service-item {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hours {
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: var(--white);
+  border-radius: 8px;
+}
+
+.contact-button {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.contact-button:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments for the button */
+@media (max-width: 768px) {
+  .contact-button {
+    top: 1rem;
+    right: 1rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
