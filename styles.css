@@ -237,6 +237,11 @@ footer {
     padding: 1.5rem;
     font-size: 1rem;
   }
+
+  .neon-text {
+    font-size: 1.8rem;
+    white-space: normal;
+  }
 }
 
 @media (max-width: 576px) {
@@ -259,11 +264,11 @@ footer {
     margin-top: 1rem;
   }
 
-  .neon-word::before,
+  /* .neon-word::before,
   .neon-word::after {
     content: "..";
     margin: 0 0.25rem;
-  }
+  } */
 
   #services {
     padding: 2rem 1rem;
@@ -289,6 +294,10 @@ footer {
     margin: 1rem;
     padding: 1rem;
   }
+
+  .neon-text {
+    font-size: 1.4rem;
+  }
 }
 
 @media (max-width: 360px) {
@@ -297,6 +306,10 @@ footer {
     padding: 0.5rem 0.75rem;
     letter-spacing: 0.02em;
     word-spacing: 0.1em;
+  }
+
+  .neon-text {
+    font-size: 1.2rem;
   }
 }
 
@@ -415,15 +428,12 @@ footer {
 
 /* Neon Text Effect */
 .neon-tagline {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1vw;
+  text-align: center;
   margin-top: 1.5rem;
   padding: 1rem;
 }
 
-.neon-word {
+.neon-text {
   font-family: "Yellowtail", cursive;
   font-size: clamp(1rem, 4vw, 2.5rem);
   font-weight: normal;
@@ -431,24 +441,7 @@ footer {
   text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff,
     0 0 42px var(--primary-color);
   animation: flicker 1.5s infinite alternate;
-}
-
-.neon-word::before {
-  content: "...";
-  margin-right: 0.5vw;
-}
-
-.neon-word::after {
-  content: "...";
-  margin-left: 0.5vw;
-}
-
-.neon-word:first-child::before {
-  visibility: hidden;
-}
-
-.neon-word:last-child::after {
-  visibility: hidden;
+  white-space: nowrap;
 }
 
 /* Flickering animation */
